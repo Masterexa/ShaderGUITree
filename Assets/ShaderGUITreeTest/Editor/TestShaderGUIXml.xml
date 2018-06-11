@@ -1,0 +1,38 @@
+<!-- XML serializer is not work now -->
+<SXML name="X" xmlns:ui="ShaderGUITree.Items">
+  <!-- Lit Area -->
+  <HorizontalSplitter name="lit" label="Lit">
+    <ui:ShaderProperty name="mode" property="_Mode" />
+    <ui:Space />
+    <!-- Main Maps Area -->
+    <ui:Label text="Main Maps"/>
+    <ui:TextureSingleLine name="albedo" label="Albedo" textureProperty="_MainTex" extraProperty1="_Color" />
+    <ui:TextureTwoLines name="metallic_smoothness" label="Metallic" textureProperty="_GlossMap" extraProperty1="_Metallic" label2="Smoothness" extraProperty2="_Glossiness"/>
+    <ui:TextureSingleLine name="occlusion" label="Occlusion" textureProperty="_OcclusionMap" extraProperty1="_OcclusionStrength"/>
+    <!-- Emission Area -->
+    <ui:TextureWithHDRColor name="emission_color" label="Color" colorProperty="_EmissionColor" textureProperty="_EmissionMap" />
+    <ui:LightmapEmission name="lightmap_emission" labelIndent="MaterialEditor.kMiniTextureFieldLabelIndentLevel"/>
+  </HorizontalSplitter>
+  
+  <!-- Displacement Area -->
+  <ui:HorizontalSplitter name="displacement" label="Displacement">
+    <ui:ShaderProperty name="displacement_mode" property="_DisplacementMode" />
+    <ui:Space />
+    <!-- Basis Area -->
+    <ui:Label text="Basis"/>
+    <ui:TextureSingleLine name="normal_map" textureProperty="_BumpMap" extraProperty1="_BumpScale"/>
+    <ui:TextureSingleLine name="height_map" textureProperty="_ParallaxMap" extraProperty1="_Parallax"/>
+    <ui:Space />
+    <!-- Tessellation Area -->
+    <ui:Label text="Tessellation"/>
+    <ui:ShaderProperty name="tessellation_value" property="_Tessellation" />
+    <ui:ShaderProperty name="tessellation_edge" property="_TessellationEdge" />
+    <ui:ShaderProperty name="tessellation_phong" property="_TessellationPhong" />
+  </ui:HorizontalSplitter>
+  
+  <!-- Misc -->
+  <ui:DefaultPropertyTab />
+  <ui:ShaderOptionsTab />
+  <ui:TreeDebugTab />
+
+</SXML>
